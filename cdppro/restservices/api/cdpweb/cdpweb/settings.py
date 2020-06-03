@@ -22,13 +22,15 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 # TODO: Update secret key as mentioned in installation document.
-SECRET_KEY = 'xxxxxxxx-xxxx-xxxx-xxxxxxxxxxxxxxxxx'
+# SECRET_KEY = 'xxxxxxxx-xxxx-xxxx-xxxxxxxxxxxxxxxxx'
+# SECRET_KEY = 'asdasdas-asdh-9aio-uhaskjhdayuwhae89'
+SECRET_KEY = '15461197fbf6db82b421ead90d5c4d1a99559a9f'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
 # TODO: Update entries in ALLOWED_HOSTS to allow access to the APIs
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["localhost", "192.168.1.110"]
 
 # Application references
 # https://docs.djangoproject.com/en/2.1/ref/settings/#std:setting-INSTALLED_APPS
@@ -122,10 +124,10 @@ WSGI_APPLICATION = 'cdpweb.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': '',
-        'USER': '',
-        'PASSWORD': '',
-        'HOST': '',
+        'NAME': 'altranmaria',
+        'USER': 'root',
+        'PASSWORD': 'asdasdasd',
+        'HOST': 'mariadb',
         'PORT': '3306',
         'OPTIONS': {
             'ssl': {'ssl-ca': ''},

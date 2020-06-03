@@ -1,0 +1,50 @@
+version: "3"
+ 
+services:
+  altranui:
+    build: 
+      context: ui/
+      dockerfile: dockerfile # si te sumban los oidos te escuchan con laser la nasa
+    networks:
+        - AltranNet
+
+  altrancore:
+    build:
+      context: cdppro/core/
+      dockerfile: Dockerfile
+    container_name: altrancore
+    # depends_on:
+    #   - mongo
+    # environment:
+    #   - NODE_ENV=DEV
+    #   - MONGODB_URI=mongodb://${APP_MONGO_USER}:${APP_MONGO_PASS}@${MONGO_EXTERNAL_HOST}:${MONGO_PORT}/${APP_MONGO_DB}
+    networks:
+      - AltranNet
+    # ports:
+    #   - 5000:3000
+  
+  altranapi:
+    build:
+      context: cdppro/restservices/api/
+      dockerfile: dockerfile
+    networks:
+      - AltranNet
+
+  mariadb:
+    image: mariadb
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: asdasdasd
+    networks:
+      - AltranNet
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+        - 8080:8080
+    networks:
+        - AltranNet
+
+networks:
+    AltranNet:
