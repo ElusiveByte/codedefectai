@@ -2,11 +2,16 @@
 FROM nginx:latest
 LABEL authors="Altran"
 
-RUN apt-get update -y \
-    && apt-get upgrade -y \
-    && apt-get install -y nodejs \
-    && npm install \
-    && ng build --prod
+# RUN apt-get update -y \
+#     && apt-get upgrade -y \
+#     && apt-get install -y nodejs \
+#     && npm install \
+#     && ng build --prod
+RUN apt-get update -y 
+RUN apt-get upgrade -y 
+RUN apt-get install -y nodejs 
+RUN npm install 
+RUN ng build --prod
 
 # Copying dist folder 
 COPY dist/AIlabCDP/ /var/www/
