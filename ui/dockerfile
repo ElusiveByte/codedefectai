@@ -2,8 +2,8 @@ FROM node as builder
 
 COPY . .
 
-RUN npm install && \
-    ng build --prod
+RUN npm install
+RUN ng build --prod
 
 
 # First stage image labelled as node-angular-cli
