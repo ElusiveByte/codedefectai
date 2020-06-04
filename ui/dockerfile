@@ -1,6 +1,5 @@
 FROM angular/ngcontainer as builder
 
-WORKDIR /
 COPY . .
 
 RUN npm install
@@ -15,7 +14,7 @@ LABEL authors="Altran"
 
 # Copying dist folder 
 # COPY dist/AIlabCDP /var/www/
-COPY --from=builder /dist/AIlabCDP /var/www/
+COPY --from=builder /home/circleci/dist/AIlabCDP /var/www/
 
 RUN apt-get update -y
 RUN apt-get upgrade -y
