@@ -6,7 +6,7 @@ services:
       context: ui/
       dockerfile: dockerfile # si te sumban los oidos te escuchan con laser la nasa
     ports:
-        - 3000:80
+        - 7500:80
     networks:
         - AltranNet
 
@@ -37,6 +37,8 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: asdasdasd
+    ports:
+      - 3306:3306
     networks:
       - AltranNet
 
