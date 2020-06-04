@@ -5,6 +5,8 @@ services:
     build: 
       context: ui/
       dockerfile: dockerfile # si te sumban los oidos te escuchan con laser la nasa
+    ports:
+        - 3000:80
     networks:
         - AltranNet
 
