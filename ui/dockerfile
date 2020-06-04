@@ -3,7 +3,7 @@ FROM angular/ngcontainer as builder
 COPY . .
 
 RUN npm install
-RUN npx ng build --prod
+RUN ng build --prod
 
 
 # First stage image labelled as node-angular-cli
