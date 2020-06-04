@@ -3,7 +3,7 @@ FROM node as builder
 COPY . .
 
 RUN npm install
-RUN ng build --prod
+RUN /opt/ng build --prod
 
 
 # First stage image labelled as node-angular-cli
