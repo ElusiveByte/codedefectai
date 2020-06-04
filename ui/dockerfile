@@ -4,6 +4,8 @@ COPY . .
 
 RUN npm install
 RUN npm run ng build --prod
+RUN pwd
+RUN ls -lha
 
 
 # First stage image labelled as node-angular-cli
