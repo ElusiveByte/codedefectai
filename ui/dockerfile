@@ -1,4 +1,4 @@
-FROM node as builder
+FROM angular/ngcontainer as builder
 
 COPY . .
 
